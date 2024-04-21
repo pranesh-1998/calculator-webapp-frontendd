@@ -21,9 +21,9 @@ pipeline {
 
             steps{
                 sh 'sudo su - jenkins -s/bin/bash'
-                //sh 'sudo docker stop $imagename'
-                //sh 'sudo docker rm $imagename'
-                //sh 'sudo docker rmi $imagename'
+                sh 'sudo docker stop $imagename'
+                sh 'sudo docker rm $imagename'
+                sh 'sudo docker rmi $imagename'
                 sh 'sudo docker image build -t  $imagename .'
                 sh 'sudo docker run -p81:8000 --restart=always --name $imagename  -itd $imagename'
 
