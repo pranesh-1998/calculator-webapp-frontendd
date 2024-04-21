@@ -29,8 +29,16 @@ pipeline {
 
             }
 
-        }  
+        }
+        
+        stage('Configure Nginx') {
+            steps {
+            sh 'sudo cp new.conf /etc/nginx/sites-enabled/'
+            sh 'sudo nginx -t'
+            sh 'sudo systemctl reload nginx'
+            }
+        }
 
-
+        
     }
 }
