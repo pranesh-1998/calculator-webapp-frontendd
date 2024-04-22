@@ -33,7 +33,6 @@ pipeline {
         stage('Run image ') {
 
             steps{
-                '
                 sh 'sudo docker run -p81:80 --restart=always --name $imagename  -itd $imagename'
 
             }
