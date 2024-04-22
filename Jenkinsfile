@@ -1,7 +1,7 @@
 pipeline {
     environment {
     imagename = "web"
-    jenkinsProject = 'frontend'
+    jenkinsProject = 'calculator-webapp-frontend'
   }
 
     agent any
